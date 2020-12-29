@@ -19,10 +19,6 @@ const performLog = ({ logger, validLvl, color } = {}, ...params) => {
   }
 };
 
-const getLogger = (prefix) => {
-  return new Logger(prefix);
-};
-
 class Logger {
   constructor(prefix = '') {
     this.prefix = prefix;
@@ -89,4 +85,4 @@ class Logger {
 }
 
 module.exports = new Logger();
-module.exports.getLogger = getLogger;
+module.exports.getLogger = (prefix) => new Logger(prefix);
