@@ -19,7 +19,7 @@ logger.muted('Hello, world!');
 logger.log('Hello, world!');
 
 // ...or alternatively
-const { getLogger } = require('@timstrasser/log-essentials');
-const namespacedLogger = getLogger('my-logger');
+const { Logger } = require('@timstrasser/log-essentials');
+const namespacedLogger = new Logger('my-logger');
 namespacedLogger.success('Hello, world!');
 ```
