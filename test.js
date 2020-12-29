@@ -5,6 +5,8 @@ logger.setLogLevel('warn');
 logger.setLogLevel('none');
 logger.setLogLevel('all');
 
+logger.setIconsEnabled(true);
+
 logger.success('Hello, world!');
 logger.warn('Hello, world!');
 logger.info('Hello, world!');

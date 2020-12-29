@@ -1,4 +1,5 @@
 const log = require('fancy-log');
+const logSymbols = require('log-symbols');
 const colors = require('colors/safe');
 
 const colorize = (color, ...params) => {
@@ -8,14 +9,33 @@ const colorize = (color, ...params) => {
   );
 };
 
-const performLog = ({ logger, validLvl, color } = {}, ...params) => {
-  if (validLvl.includes(logger.level)) {
-    if (logger.prefix.length) {
-      params.unshift('-');
-      params.unshift(`[${logger.prefix}]`);
+const performLog = (options, ...params) => {
+  if (options.validLvl.includes(options.level)) {
+    if (options.prefix.length) {
+      if (options.seperator.length) {
+        params.unshift(options.seperator);
+      }
+      params.unshift(`[${options.prefix}]`);
     }
 
-    log(...colorize(color, ...params));
+    if (options.icons) {
+      switch (options.color) {
+        case 'blue':
+          params.unshift(logSymbols.info);
+          break;
+        case 'red':
+          params.unshift(logSymbols.error);
+          break;
+        case 'yellow':
+          params.unshift(logSymbols.warning);
+          break;
+        case 'green':
+          params.unshift(logSymbols.success);
+          break;
+      }
+    }
+
+    log(...colorize(options.color, ...params));
   }
 };
 
@@ -27,18 +47,27 @@ class Logger {
    * @param {string} [prefix=''] A prefix that's added to all log messages
    * @memberof Logger
    */
-  constructor(prefix = '') {
-    this.prefix = prefix;
-    this.level = 'all';
+  constructor(options) {
+    this.options = {
+      icons: false,
+      level: 'all',
+      prefix: '',
+      seperator: '-',
+      ...options,
+    };
   }
 
   setLogLevel(newLevel) {
-    this.level = newLevel;
+    this.options.level = newLevel;
+  }
+
+  setIconsEnabled(val) {
+    this.options.icons = val;
   }
 
   log(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'info'],
     };
     performLog(logOptions, ...params);
@@ -46,7 +75,7 @@ class Logger {
 
   success(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'info'],
       color: 'green',
     };
@@ -56,7 +85,7 @@ class Logger {
 
   info(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'info'],
       color: 'blue',
     };
@@ -65,7 +94,7 @@ class Logger {
 
   warn(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'warn'],
       color: 'yellow',
     };
@@ -74,7 +103,7 @@ class Logger {
 
   error(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'warn'],
       color: 'red',
     };
@@ -83,7 +112,7 @@ class Logger {
 
   muted(...params) {
     let logOptions = {
-      logger: this,
+      ...this.options,
       validLvl: ['all', 'info'],
       color: 'gray',
     };
