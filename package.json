@@ -1,6 +1,6 @@
 {
-  "name": "log-essentials",
-  "version": "1.0.0",
+  "name": "@timstrasser/log-essentials",
+  "version": "1.0.1",
   "description": "Basic logger with support for color, levels and timestamps.",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,14 @@
   "dependencies": {
     "colors": "^1.4.0",
     "fancy-log": "^1.3.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XENOTpro/log-essentials.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XENOTpro/log-essentials/issues"
+  },
+  "homepage": "https://github.com/XENOTpro/log-essentials#readme"
 }

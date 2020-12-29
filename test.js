@@ -1,7 +1,7 @@
-const { getLogger } = require('./index.js');
-const logger = getLogger({ prefix: 'test-logger' });
+const Logger = require('./index.js');
+const logger = new Logger('my-logger');
 
-logger.setLvl(0);
+logger.setLogLevel('all');
 
 logger.success('Hello, world!');
 logger.warn('Hello, world!');
