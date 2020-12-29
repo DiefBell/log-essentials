@@ -19,6 +19,8 @@ const performLog = ({ logger, validLvl, color } = {}, ...params) => {
   }
 };
 
+const getLogger = (prefix) => new Logger(prefix);
+
 class Logger {
   /**
    * Creates an instance of Logger.
@@ -91,3 +93,4 @@ class Logger {
 
 module.exports = new Logger();
 module.exports.Logger = Logger;
+module.exports.getLogger = getLogger;

@@ -16,3 +16,8 @@ logger.log('Hello, world!');
 const { Logger } = require('./index.js');
 const namespacedLogger = new Logger('my-logger');
 namespacedLogger.success('Hello, world!');
+
+// ...or alternatively
+const { getLogger } = require('./index.js');
+const otherNamespacedLogger = getLogger('my-other-logger');
+otherNamespacedLogger.info('Hello, world!');

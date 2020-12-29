@@ -1,6 +1,6 @@
 {
   "name": "@timstrasser/log-essentials",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Basic logger with support for color, levels and timestamps.",
   "main": "index.js",
   "scripts": {

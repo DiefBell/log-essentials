@@ -5,7 +5,9 @@ Log things, prefixed with a timestamp and name. Also uses colors and logging lev
 ## Usage
 
 ```js
-const logger = require('@timstrasser/log-essentials');
+
+const logger = require('@timstrasser/log-essentials'');
+
 logger.setLogLevel('info');
 logger.setLogLevel('warn');
 logger.setLogLevel('none');
@@ -19,7 +21,12 @@ logger.muted('Hello, world!');
 logger.log('Hello, world!');
 
 // ...or alternatively
-const { Logger } = require('@timstrasser/log-essentials');
+const { Logger } = require('@timstrasser/log-essentials'');
 const namespacedLogger = new Logger('my-logger');
 namespacedLogger.success('Hello, world!');
+
+// ...or alternatively
+const { getLogger } = require('@timstrasser/log-essentials'');
+const otherNamespacedLogger = getLogger('my-other-logger');
+otherNamespacedLogger.info('Hello, world!');
 ```
