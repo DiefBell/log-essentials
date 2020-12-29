@@ -2,7 +2,7 @@
 Log things, prefixed with a timestamp and name. Also uses colors and logging levels!
 
 ## Usage
-```
+```js
 const { getLogger } = require('./index.js');
 const logger = getLogger({ prefix: 'test-logger' });
 
