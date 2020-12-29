@@ -1,0 +1,24 @@
+{
+  "name": "log-essentials",
+  "version": "1.0.0",
+  "description": "Basic logger with support for color, levels and timestamps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "log",
+    "fancy",
+    "essential",
+    "logger",
+    "colors",
+    "levels",
+    "timestamps"
+  ],
+  "author": "Tim Strasser",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "fancy-log": "^1.3.3"
+  }
+}
