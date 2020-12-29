@@ -10,14 +10,20 @@ const colorize = (color, ...params) => {
 
 const performLog = ({ logger, validLvl, color } = {}, ...params) => {
   if (validLvl.includes(logger.level)) {
-    params.unshift('-');
-    params.unshift(logger.prefix);
+    if (logger.prefix.length) {
+      params.unshift('-');
+      params.unshift(`[${logger.prefix}]`);
+    }
 
     log(...colorize(color, ...params));
   }
 };
 
-module.exports = class Logger {
+const getLogger = (prefix) => {
+  return new Logger(prefix);
+};
+
+class Logger {
   constructor(prefix = '') {
     this.prefix = prefix;
     this.level = 'all';
@@ -57,7 +63,7 @@ module.exports = class Logger {
   warn(...params) {
     let logOptions = {
       logger: this,
-      validLvl: ['all', 'error'],
+      validLvl: ['all', 'warn'],
       color: 'yellow',
     };
     performLog(logOptions, ...params);
@@ -66,7 +72,7 @@ module.exports = class Logger {
   error(...params) {
     let logOptions = {
       logger: this,
-      validLvl: ['all', 'error'],
+      validLvl: ['all', 'warn'],
       color: 'red',
     };
     performLog(logOptions, ...params);
@@ -80,4 +86,7 @@ module.exports = class Logger {
     };
     performLog(logOptions, ...params);
   }
-};
+}
+
+module.exports = new Logger();
+module.exports.getLogger = getLogger;

@@ -1,6 +1,8 @@
-const Logger = require('./index.js');
-const logger = new Logger('my-logger');
+const logger = require('./index.js');
 
+logger.setLogLevel('info');
+logger.setLogLevel('warn');
+logger.setLogLevel('none');
 logger.setLogLevel('all');
 
 logger.success('Hello, world!');
@@ -9,3 +11,8 @@ logger.info('Hello, world!');
 logger.error('Hello, world!');
 logger.muted('Hello, world!');
 logger.log('Hello, world!');
+
+// ...or alternatively
+const { getLogger } = require('./index.js');
+const namespacedLogger = getLogger('my-logger');
+namespacedLogger.success('Hello, world!');
