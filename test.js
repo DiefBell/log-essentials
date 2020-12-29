@@ -16,10 +16,14 @@ logger.log('Hello, world!');
 
 // ...or alternatively
 const { Logger } = require('./index.js');
-const namespacedLogger = new Logger('my-logger');
+const namespacedLogger = new Logger({
+  prefix: 'my-logger',
+  icons: true,
+  seperator: ':',
+});
 namespacedLogger.success('Hello, world!');
 
 // ...or alternatively
 const { getLogger } = require('./index.js');
-const otherNamespacedLogger = getLogger('my-other-logger');
+const otherNamespacedLogger = getLogger({ prefix: 'my-other-logger' });
 otherNamespacedLogger.info('Hello, world!');
