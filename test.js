@@ -13,6 +13,6 @@ logger.muted('Hello, world!');
 logger.log('Hello, world!');
 
 // ...or alternatively
-const { getLogger } = require('./index.js');
-const namespacedLogger = getLogger('my-logger');
+const { Logger } = require('./index.js');
+const namespacedLogger = new Logger('my-logger');
 namespacedLogger.success('Hello, world!');

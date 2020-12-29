@@ -20,6 +20,11 @@ const performLog = ({ logger, validLvl, color } = {}, ...params) => {
 };
 
 class Logger {
+  /**
+   * Creates an instance of Logger.
+   * @param {string} [prefix=''] A prefix that's added to all log messages
+   * @memberof Logger
+   */
   constructor(prefix = '') {
     this.prefix = prefix;
     this.level = 'all';
@@ -85,4 +90,4 @@ class Logger {
 }
 
 module.exports = new Logger();
-module.exports.getLogger = (prefix) => new Logger(prefix);
+module.exports.Logger = Logger;
