@@ -39,7 +39,8 @@ const performLog = (options, ...params) => {
   }
 };
 
-const getLogger = (prefix) => new Logger(prefix);
+const getPrefixedLogger = (prefix) => new Logger({ prefix: prefix || '' });
+const getLogger = (options) => new Logger(options);
 
 class Logger {
   /**
@@ -120,6 +121,5 @@ class Logger {
   }
 }
 
-module.exports = new Logger();
-module.exports.Logger = Logger;
+module.exports = getPrefixedLogger;
 module.exports.getLogger = getLogger;

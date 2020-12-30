@@ -6,9 +6,10 @@ Log things, prefixed with a timestamp and name. Also uses colors and logging lev
 
 ## Usage
 
-```js
+Basic usage:
 
-const logger = require('@timstrasser/log-essentials'');
+```js
+const logger = require('log-essentials')();
 
 logger.setLogLevel('info');
 logger.setLogLevel('warn');
@@ -23,14 +24,23 @@ logger.info('Hello, world!');
 logger.error('Hello, world!');
 logger.muted('Hello, world!');
 logger.log('Hello, world!');
+```
 
-// ...or alternatively
-const { Logger } = require('@timstrasser/log-essentials'');
-const namespacedLogger = new Logger({ prefix: 'my-logger', icons: true });
-namespacedLogger.success('Hello, world!');
+With namespace:
 
-// ...or alternatively
-const { getLogger } = require('@timstrasser/log-essentials'');
-const otherNamespacedLogger = getLogger({ prefix: 'my-other-logger' });
-otherNamespacedLogger.info('Hello, world!');
+```js
+const namespacedLogger = require('log-essentials')('my-namespace');
+namespacedLogger.warn('Hello, world!');
+```
+
+With namespace and custom configuration:
+
+```js
+const { getLogger } = require('log-essentials');
+const otherNamespacedLogger = getLogger({
+  prefix: 'my-logger',
+  icons: true,
+  seperator: ':',
+});
+otherNamespacedLogger.success('Hello, world!');
 ```

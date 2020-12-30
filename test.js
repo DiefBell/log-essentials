@@ -1,4 +1,4 @@
-const logger = require('./index.js');
+const logger = require('./index.js')();
 
 logger.setLogLevel('info');
 logger.setLogLevel('warn');
@@ -14,16 +14,15 @@ logger.error('Hello, world!\n');
 logger.muted('Hello, world!\n');
 logger.log('Hello, world!\n');
 
-// ...or alternatively
-const { Logger } = require('./index.js');
-const namespacedLogger = new Logger({
+// ...or alternatively (with namespace)
+const namespacedLogger = require('./index.js')('my-namespace');
+namespacedLogger.warn('Hello, world!\n');
+
+// ...or alternatively (with options)
+const { getLogger } = require('./index.js');
+const otherNamespacedLogger = getLogger({
   prefix: 'my-logger',
   icons: true,
   seperator: ':',
 });
-namespacedLogger.success('Hello, world!\n');
-
-// ...or alternatively
-const { getLogger } = require('./index.js');
-const otherNamespacedLogger = getLogger({ prefix: 'my-other-logger' });
-otherNamespacedLogger.info('Hello, world!\n');
+otherNamespacedLogger.success('Hello, world!\n');
