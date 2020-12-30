@@ -10,6 +10,7 @@ logger.setIconsEnabled(true);
 logger.success('Hello, world!\n');
 logger.warn('Hello, world!\n');
 logger.info('Hello, world!\n');
+
 logger.error('Hello, world!\n');
 logger.muted('Hello, world!\n');
 logger.log('Hello, world!\n');
