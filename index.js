@@ -40,14 +40,20 @@ const performLog = (options, ...params) => {
 };
 
 const getPrefixedLogger = (prefix) => new Logger({ prefix: prefix || '' });
+
+/**
+ * @description
+ * Creates an instance of Logger.
+ *
+ * @param {Object} options
+ * @param {boolean} options.icons If set to true, icons will be added in front of log messages
+ * @param {string} options.level Can be all/none/warn/info according to what log messages should be output
+ * @param {string} options.prefix Defines the namespace of the logger
+ * @param {string} options.seperator Defines the seperator between the namespace and the log message
+ */
 const getLogger = (options) => new Logger(options);
 
 class Logger {
-  /**
-   * Creates an instance of Logger.
-   * @param {string} [prefix=''] A prefix that's added to all log messages
-   * @memberof Logger
-   */
   constructor(options) {
     this.options = {
       icons: false,
