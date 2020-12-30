@@ -39,7 +39,7 @@ With namespace and custom configuration:
 ```js
 const { getLogger } = require('log-essentials');
 const otherNamespacedLogger = getLogger({
-  prefix: 'my-logger',
+  prefix: 'my-other-namespace',
   icons: true,
   seperator: ':',
 });

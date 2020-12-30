@@ -22,7 +22,7 @@ namespacedLogger.warn('Hello, world!\n');
 // ...or alternatively (with options)
 const { getLogger } = require('./index.js');
 const otherNamespacedLogger = getLogger({
-  prefix: 'my-logger',
+  prefix: 'my-other-namespace',
   icons: true,
   seperator: ':',
 });
