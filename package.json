@@ -13,7 +13,13 @@
     "logger",
     "colors",
     "levels",
-    "timestamps"
+    "timestamp",
+    "icons",
+    "console",
+    "error",
+    "warning",
+    "namespace",
+    "prefix"
   ],
   "author": "Tim Strasser",
   "license": "ISC",
