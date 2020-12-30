@@ -47,19 +47,25 @@ const getIconFromColor = (color) => {
 module.exports.performLog = (options, ...params) => {
   if (!shouldLog(options.level, options.validLevel)) return;
 
+  const logOutput = [];
+
   if (hasPrefix(options)) {
+    logOutput.push(`[${options.prefix}]`);
+
     if (hasSeperator(options)) {
-      params.unshift(options.seperator);
+      logOutput.push(options.seperator);
     }
-    params.unshift(`[${options.prefix}]`);
   }
 
   if (shouldDisplayIcons(options)) {
     let icon = getIconFromColor(options.color);
     if (icon) {
-      params.unshift(icon);
+      logOutput.push(icon);
+      icon;
     }
   }
 
-  log(...colorizeParams(options.color, ...params));
+  logOutput.push(...params);
+
+  log(...colorizeParams(options.color, ...logOutput));
 };
