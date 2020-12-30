@@ -17,6 +17,8 @@ logger.log('Hello, world!\n');
 
 // ...or alternatively (with namespace)
 const namespacedLogger = require('./index.js')('my-namespace');
+
+namespacedLogger.setSeperator(':');
 namespacedLogger.warn('Hello, world!\n');
 
 // ...or alternatively (with options)

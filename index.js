@@ -23,7 +23,7 @@ const getLogger = (options) => new Logger(options);
 class Logger {
   constructor(options) {
     this.options = {
-      icons: false,
+      isIconsEnabled: false,
       level: 'all',
       prefix: '',
       seperator: '-',
@@ -35,8 +35,12 @@ class Logger {
     this.options.level = newLevel;
   }
 
-  setIconsEnabled(val) {
-    this.options.icons = val;
+  setIconsEnabled(isIconsEnabled) {
+    this.options.isIconsEnabled = isIconsEnabled;
+  }
+
+  setSeperator(seperator) {
+    this.options.seperator = seperator;
   }
 
   log(...params) {

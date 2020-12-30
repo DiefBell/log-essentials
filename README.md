@@ -18,6 +18,7 @@ logger.setLogLevel('none');
 logger.setLogLevel('all');
 
 logger.setIconsEnabled(true);
+logger.setSeperator(':');
 
 logger.success('Hello, world!');
 logger.warn('Hello, world!');
@@ -31,6 +32,7 @@ With namespace:
 
 ```js
 const namespacedLogger = require('log-essentials')('my-namespace');
+
 namespacedLogger.warn('Hello, world!');
 ```
 
@@ -38,11 +40,13 @@ With namespace and custom configuration:
 
 ```js
 const { getLogger } = require('log-essentials');
+
 const otherNamespacedLogger = getLogger({
   prefix: 'my-other-namespace',
   icons: true,
   seperator: ':',
 });
+
 otherNamespacedLogger.success('Hello, world!');
 ```
 

@@ -21,8 +21,8 @@ const hasSeperator = (options) => {
   return options.seperator.length;
 };
 
-const shouldDisplayIcons = (options) => {
-  return options.icons;
+const isIconsEnabled = (options) => {
+  return options.isIconsEnabled;
 };
 
 const getIconFromColor = (color) => {
@@ -57,7 +57,7 @@ module.exports.performLog = (options, ...params) => {
     }
   }
 
-  if (shouldDisplayIcons(options)) {
+  if (isIconsEnabled(options)) {
     let icon = getIconFromColor(options.color);
     if (icon) {
       logOutput.push(icon);
