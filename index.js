@@ -39,11 +39,17 @@ const performLog = (options, ...params) => {
   }
 };
 
+/**
+ * @description
+ * Creates an instance of Logger with given namespace.
+ *
+ * @param {string} prefix Defines the namespace of the logger
+ */
 const getPrefixedLogger = (prefix) => new Logger({ prefix: prefix || '' });
 
 /**
  * @description
- * Creates an instance of Logger.
+ * Creates an instance of Logger with options.
  *
  * @param {Object} options
  * @param {boolean} options.icons If set to true, icons will be added in front of log messages
