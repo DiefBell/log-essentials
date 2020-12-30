@@ -3,7 +3,7 @@
 A simple logger, that combines timestamps, namespaces, colors, logging levels and icons into only simple package!
 Uses [colors](https://www.npmjs.com/package/colors), [fancy-log](https://www.npmjs.com/package/fancy-log) and [log-symbols](https://www.npmjs.com/package/log-symbols).
 
-![Screenshot](Screenshot.png)
+![Screenshot](docs/screenshot.png)
 
 ## Usage
 
@@ -46,8 +46,11 @@ const otherNamespacedLogger = getLogger({
 otherNamespacedLogger.success('Hello, world!');
 ```
 
-## TODO:
+## Task List:
 
-- Fancy(er) namespace badges
-- More optional styling options (backround color, underlined, etc.)
-- Log time between log messages
+- [x] Log levels (all/none/warn/info)
+- [x] Icons
+- [x] Namespaces
+- [ ] Fancy(er) namespace badges
+- [ ] More optional styling options (backround color, underlined, etc.)
+- [ ] Log time between log messages
