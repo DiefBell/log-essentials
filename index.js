@@ -1,4 +1,4 @@
-const performLog = require('./performLog.js');
+const { performLog } = require('./util.js');
 
 /**
  * @description
@@ -42,7 +42,7 @@ class Logger {
   log(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'info'],
+      validLevel: ['all', 'info'],
     };
     performLog(logOptions, ...params);
   }
@@ -50,7 +50,7 @@ class Logger {
   success(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'info'],
+      validLevel: ['all', 'info'],
       color: 'green',
     };
 
@@ -60,7 +60,7 @@ class Logger {
   info(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'info'],
+      validLevel: ['all', 'info'],
       color: 'blue',
     };
     performLog(logOptions, ...params);
@@ -69,7 +69,7 @@ class Logger {
   warn(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'warn'],
+      validLevel: ['all', 'warn'],
       color: 'yellow',
     };
     performLog(logOptions, ...params);
@@ -78,7 +78,7 @@ class Logger {
   error(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'warn'],
+      validLevel: ['all', 'warn'],
       color: 'red',
     };
     performLog(logOptions, ...params);
@@ -87,7 +87,7 @@ class Logger {
   muted(...params) {
     let logOptions = {
       ...this.options,
-      validLvl: ['all', 'info'],
+      validLevel: ['all', 'info'],
       color: 'gray',
     };
     performLog(logOptions, ...params);
