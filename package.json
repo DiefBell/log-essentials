@@ -7,6 +7,7 @@
     "build": "rm ./lib/* && tsc --project tsconfig.build.json",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint ./src/**/*.ts --fix",
+    "no-circ-deps": "dpdm --no-warning --no-tree --exit-code circular:1 ./src/index.ts",
     "test": "node example.js"
   },
   "files": [
@@ -40,6 +41,7 @@
     "@types/fancy-log": "^1.3.1",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "dpdm": "^3.9.0",
     "eslint": "^8.15.0",
     "typescript": "^4.6.4"
   },
