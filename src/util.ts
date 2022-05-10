@@ -7,7 +7,8 @@ import type { LogParams } from './LogParams';
 import log from 'fancy-log';
 import logSymbols from 'log-symbols';
 
-const colorizeParams = (color ?: Color, ...params : LogParams) => {
+const colorizeParams = (color ?: Color, ...params : LogParams) => 
+{
 	if (!color || !colors[color]) return params;
 
 	return params.map((param) =>
@@ -15,24 +16,30 @@ const colorizeParams = (color ?: Color, ...params : LogParams) => {
 	);
 };
 
-const shouldLog = (currentLevel : LogLevel, validLevels : LogLevel[]) => {
+const shouldLog = (currentLevel : LogLevel, validLevels : LogLevel[]) => 
+{
 	return validLevels.includes(currentLevel);
 };
 
-const hasPrefix = (options : ILogOptions) => {
+const hasPrefix = (options : ILogOptions) => 
+{
 	return options.prefix.length;
 };
 
-const hasseparator = (options : ILogOptions) => {
+const hasseparator = (options : ILogOptions) => 
+{
 	return options.separator.length;
 };
 
-const isIconsEnabled = (options : ILogOptions) => {
+const isIconsEnabled = (options : ILogOptions) => 
+{
 	return options.isIconsEnabled;
 };
 
-const getIconFromColor = (color ?: Color) => {
-	switch (color) {
+const getIconFromColor = (color ?: Color) => 
+{
+	switch (color) 
+{
 		case 'blue':
 			return logSymbols.info;
 			break;
@@ -50,22 +57,27 @@ const getIconFromColor = (color ?: Color) => {
 	}
 };
 
-export const performLog = (options : ILogOptions, ...params : LogParams) => {
+export const performLog = (options : ILogOptions, ...params : LogParams) => 
+{
 	if (!shouldLog(options.level, options.validLevel)) return;
 
 	const logOutput = [];
 
-	if (hasPrefix(options)) {
+	if (hasPrefix(options)) 
+{
 		logOutput.push(`[${options.prefix}]`);
 
-		if (hasseparator(options)) {
+		if (hasseparator(options)) 
+{
 			logOutput.push(options.separator);
 		}
 	}
 
-	if (isIconsEnabled(options)) {
-		let icon = getIconFromColor(options.color);
-		if (icon) {
+	if (isIconsEnabled(options)) 
+{
+		const icon = getIconFromColor(options.color);
+		if (icon) 
+{
 			logOutput.push(icon);
 			icon;
 		}

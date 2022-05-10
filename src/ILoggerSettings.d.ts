@@ -1,4 +1,3 @@
-import { Color } from "./Color";
 import { LogLevel } from "./LogLevel";
 
 export interface ILoggerSettings

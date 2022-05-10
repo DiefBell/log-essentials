@@ -5,6 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm ./lib/* && tsc --project tsconfig.build.json",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix",
     "test": "node example.js"
   },
   "files": [
@@ -36,6 +38,9 @@
   },
   "devDependencies": {
     "@types/fancy-log": "^1.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.15.0",
     "typescript": "^4.6.4"
   },
   "repository": {
