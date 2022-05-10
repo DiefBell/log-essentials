@@ -1,4 +1,8 @@
-const { performLog } = require('./util.js');
+import type { ILogOptions } from './ILogOptions';
+import type { ILoggerSettings } from './ILoggerSettings';
+import type { LogLevel } from './LogLevel';
+import type { LogParams } from './LogParams';
+import { performLog }  from './util';
 
 /**
  * @description
@@ -6,7 +10,7 @@ const { performLog } = require('./util.js');
  *
  * @param {string} prefix Defines the namespace of the logger
  */
-const getPrefixedLogger = (prefix) => new Logger({ prefix: prefix || '' });
+export const getPrefixedLogger = (prefix : string = '') => new Logger({ prefix });
 
 /**
  * @description
@@ -16,43 +20,49 @@ const getPrefixedLogger = (prefix) => new Logger({ prefix: prefix || '' });
  * @param {boolean} options.icons If set to true, icons will be added in front of log messages
  * @param {string} options.level Can be all/none/warn/info according to what log messages should be output
  * @param {string} options.prefix Defines the namespace of the logger
- * @param {string} options.seperator Defines the seperator between the namespace and the log message
+ * @param {string} options.separator Defines the separator between the namespace and the log message
  */
-const getLogger = (options) => new Logger(options);
+export const getLogger = (options : ILoggerSettings) => new Logger(options);
 
 class Logger {
-  constructor(options) {
+  private options : ILoggerSettings;
+
+  constructor({
+    isIconsEnabled = false,
+    level = 'all',
+    prefix = '',
+    separator = '-'
+  }: Partial<ILoggerSettings>) {
     this.options = {
-      isIconsEnabled: false,
-      level: 'all',
-      prefix: '',
-      seperator: '-',
-      ...options,
+      isIconsEnabled,
+      level,
+      prefix,
+      separator
     };
   }
 
-  setLogLevel(newLevel) {
+  setLogLevel(newLevel : LogLevel) {
     this.options.level = newLevel;
   }
 
-  setIconsEnabled(isIconsEnabled) {
+  setIconsEnabled(isIconsEnabled : boolean) {
     this.options.isIconsEnabled = isIconsEnabled;
   }
 
-  setSeperator(seperator) {
-    this.options.seperator = seperator;
+  setseparator(separator : string) {
+    this.options.separator = separator;
   }
 
-  log(...params) {
-    let logOptions = {
+  log(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'info'],
     };
     performLog(logOptions, ...params);
   }
 
-  success(...params) {
-    let logOptions = {
+  success(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'info'],
       color: 'green',
@@ -61,8 +71,8 @@ class Logger {
     performLog(logOptions, ...params);
   }
 
-  info(...params) {
-    let logOptions = {
+  info(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'info'],
       color: 'blue',
@@ -70,8 +80,8 @@ class Logger {
     performLog(logOptions, ...params);
   }
 
-  warn(...params) {
-    let logOptions = {
+  warn(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'warn'],
       color: 'yellow',
@@ -79,8 +89,8 @@ class Logger {
     performLog(logOptions, ...params);
   }
 
-  error(...params) {
-    let logOptions = {
+  error(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'warn'],
       color: 'red',
@@ -88,8 +98,8 @@ class Logger {
     performLog(logOptions, ...params);
   }
 
-  muted(...params) {
-    let logOptions = {
+  muted(...params : LogParams) {
+    const logOptions : ILogOptions = {
       ...this.options,
       validLevel: ['all', 'info'],
       color: 'gray',
@@ -97,6 +107,3 @@ class Logger {
     performLog(logOptions, ...params);
   }
 }
-
-module.exports = getPrefixedLogger;
-module.exports.getLogger = getLogger;

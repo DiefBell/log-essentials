@@ -18,7 +18,7 @@ logger.setLogLevel('none');
 logger.setLogLevel('all');
 
 logger.setIconsEnabled(true);
-logger.setSeperator(':');
+logger.setseparator(':');
 
 logger.success('Hello, world!');
 logger.warn('Hello, world!');
@@ -44,7 +44,7 @@ const { getLogger } = require('log-essentials');
 const otherNamespacedLogger = getLogger({
   prefix: 'my-other-namespace',
   icons: true,
-  seperator: ':',
+  separator: ':',
 });
 
 otherNamespacedLogger.success('Hello, world!');
