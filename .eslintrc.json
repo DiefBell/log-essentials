@@ -1,4 +1,10 @@
 {
+    "ignorePatterns": [
+        "jest.config.js",
+        "example-es6/*",
+        "example-es5/*",
+        "lib/*"
+    ],
     "root": true,
     "extends": [
         "eslint:recommended",
@@ -10,6 +16,12 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "brace-style": [ "error", "allman" ]
+        "brace-style": "off",
+        "@typescript-eslint/brace-style": [ "error", "allman" ],
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", "tab" ],
+        "semi": "off",
+        "@typescript-eslint/semi": ["error"],
+        "@typescript-eslint/type-annotation-spacing": [ "error", { "before": true, "after": true } ]
     }
 }

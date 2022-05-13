@@ -4,5 +4,27 @@
     },
     "eslint.validate": [
         "typescript"
-    ]
+    ],
+    "[typescript]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+    "[javascript]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+    "[json]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true
+    },
+    "files.eol": "\n"
 }

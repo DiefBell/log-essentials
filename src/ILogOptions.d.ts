@@ -4,6 +4,6 @@ import { LogLevel } from "./LogLevel";
 
 export interface ILogOptions extends ILoggerSettings
 {
-    validLevel : LogLevel[];
-    color ?: Color;
+	validLevel : LogLevel[];
+	color ?: Color;
 }
