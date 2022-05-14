@@ -1,8 +1,8 @@
-import type { ILogOptions } from './ILogOptions';
-import type { ILoggerSettings } from './ILoggerSettings';
-import type { LogLevel } from './LogLevel';
-import type { LogParams } from './LogParams';
-import { performLog }  from './util/index';
+import type { ILogOptions } from "./ILogOptions";
+import type { ILoggerSettings } from "./ILoggerSettings";
+import type { LogLevel } from "./LogLevel";
+import type { LogParams } from "./LogParams";
+import { performLog }  from "./util/index";
 
 /**
  * @description
@@ -10,7 +10,7 @@ import { performLog }  from './util/index';
  *
  * @param prefix Defines the namespace of the logger
  */
-export const getPrefixedLogger = (prefix  = '') => new Logger({ prefix });
+export const getPrefixedLogger = (prefix  = "") => new Logger({ prefix });
 
 /**
  * @description
@@ -36,9 +36,9 @@ class Logger
 
 	constructor({
 		isIconsEnabled = false,
-		level = 'all',
-		prefix = '',
-		separator = '-'
+		level = "all",
+		prefix = "",
+		separator = "-"
 	} : Partial<ILoggerSettings>) 
 	{
 		this.options = {
@@ -68,7 +68,7 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'info'],
+			validLevel: ["all", "info"],
 		};
 		performLog(logOptions, ...params);
 	}
@@ -77,8 +77,8 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'info'],
-			color: 'green',
+			validLevel: ["all", "info"],
+			color: "green",
 		};
 
 		performLog(logOptions, ...params);
@@ -88,8 +88,8 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'info'],
-			color: 'blue',
+			validLevel: ["all", "info"],
+			color: "blue",
 		};
 		performLog(logOptions, ...params);
 	}
@@ -98,8 +98,8 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'warn'],
-			color: 'yellow',
+			validLevel: ["all", "warn"],
+			color: "yellow",
 		};
 		performLog(logOptions, ...params);
 	}
@@ -108,8 +108,8 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'warn'],
-			color: 'red',
+			validLevel: ["all", "warn"],
+			color: "red",
 		};
 		performLog(logOptions, ...params);
 	}
@@ -118,8 +118,8 @@ class Logger
 	{
 		const logOptions : ILogOptions = {
 			...this.options,
-			validLevel: ['all', 'info'],
-			color: 'gray',
+			validLevel: ["all", "info"],
+			color: "gray",
 		};
 		performLog(logOptions, ...params);
 	}

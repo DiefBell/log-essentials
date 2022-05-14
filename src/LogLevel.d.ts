@@ -1,5 +1,5 @@
 export type LogLevel =
-    'info'
-    | 'warn'
-    | 'none'
-    | 'all';
+    "info"
+    | "warn"
+    | "none"
+    | "all";

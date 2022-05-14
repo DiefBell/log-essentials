@@ -1,8 +1,8 @@
-import { colorizeParams, getIconFromColor, hasPrefix, hasseparator, isIconsEnabled, shouldLog } from './util';
+import { colorizeParams, getIconFromColor, hasPrefix, hasseparator, isIconsEnabled, shouldLog } from "./util";
 
-import { ILogOptions } from '../ILogOptions';
-import { LogParams } from '../LogParams';
-import log from 'fancy-log';
+import { ILogOptions } from "../ILogOptions";
+import { LogParams } from "../LogParams";
+import log from "fancy-log";
 
 export const performLog = (options : ILogOptions, ...params : LogParams) => 
 {

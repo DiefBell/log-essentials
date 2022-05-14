@@ -22,6 +22,8 @@
         "@typescript-eslint/indent": ["error", "tab" ],
         "semi": "off",
         "@typescript-eslint/semi": ["error"],
-        "@typescript-eslint/type-annotation-spacing": [ "error", { "before": true, "after": true } ]
+        "@typescript-eslint/type-annotation-spacing": [ "error", { "before": true, "after": true } ],
+        "quotes": "off",
+        "@typescript-eslint/quotes": [ "error", "double" ]
     }
 }
