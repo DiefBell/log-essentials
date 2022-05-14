@@ -2,10 +2,6 @@ import { getLogger, getPrefixedLogger } from "./index";
 
 import fancyLog from "fancy-log";
 
-// eslint-disable-next-line
-// @ts-ignore
-// jest.spyOn(fancyLog, "default").mockImplementation((...args : any[]) => {}); // eslint-disable-line
-
 jest.mock("fancy-log", () => ({
 	...jest.requireActual<typeof fancyLog>("fancy-log"),
 	__esModule: true,
