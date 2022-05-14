@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Log Essentials package when doing standard logging should match the snapshot 1`] = `
+Array [
+  Array [
+    "[32m√[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[33m‼[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[34mi[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[31m×[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "Hello, world!
+",
+  ],
+  Array [
+    "Hello, world!
+",
+  ],
+]
+`;
