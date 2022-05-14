@@ -4,7 +4,7 @@ export default () =>
 {
 	const otherNamespacedLogger = getLogger({
 		prefix: "my-other-namespace",
-		icons: true,
+		isIconsEnabled: true,
 		separator: ":",
 	});
 	otherNamespacedLogger.success("Hello, world!\n");
