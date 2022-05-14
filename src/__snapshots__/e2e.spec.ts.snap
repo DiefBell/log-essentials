@@ -32,3 +32,93 @@ Array [
   ],
 ]
 `;
+
+exports[`Log Essentials package when using a logger with options should match the snapshot 1`] = `
+Array [
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "[32m√[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "[33m‼[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "[34mi[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "[31m×[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-other-namespace]",
+    ":",
+    "Hello, world!
+",
+  ],
+]
+`;
+
+exports[`Log Essentials package when using a namespaced logger should match the snapshot 1`] = `
+Array [
+  Array [
+    "[my-namespace]",
+    ":",
+    "[32m√[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-namespace]",
+    ":",
+    "[33m‼[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-namespace]",
+    ":",
+    "[34mi[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-namespace]",
+    "=>",
+    "[31m×[39m",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-namespace]",
+    "=>",
+    "Hello, world!
+",
+  ],
+  Array [
+    "[my-namespace]",
+    "=>",
+    "Hello, world!
+",
+  ],
+]
+`;

@@ -1,5 +1,6 @@
+import { getLogger, getPrefixedLogger } from "./index";
+
 import fancyLog from "fancy-log";
-import { getLogger } from "./index";
 
 // eslint-disable-next-line
 // @ts-ignore
@@ -48,4 +49,47 @@ describe("Log Essentials package", () =>
 		});
 	});
 
+	describe("when using a namespaced logger", () => 
+	{
+		it("should match the snapshot", () => 
+		{
+			const namespacedLogger = getPrefixedLogger("my-namespace");
+			namespacedLogger.setIconsEnabled(true);
+
+			namespacedLogger.setseparator(":");
+			
+			namespacedLogger.success("Hello, world!\n");
+			namespacedLogger.warn("Hello, world!\n");
+			namespacedLogger.info("Hello, world!\n");
+
+			namespacedLogger.setseparator("=>");
+			
+			namespacedLogger.error("Hello, world!\n");
+			namespacedLogger.muted("Hello, world!\n");
+			namespacedLogger.log("Hello, world!\n");
+
+			expect((fancyLog as unknown as jest.Mock).mock.calls).toMatchSnapshot();
+		});
+	});
+
+	describe("when using a logger with options", () => 
+	{
+		it("should match the snapshot", () => 
+		{
+			const optionsLogger = getLogger({
+				prefix: "my-other-namespace",
+				isIconsEnabled: true,
+				separator: ":",
+			});
+			
+			optionsLogger.success("Hello, world!\n");
+			optionsLogger.warn("Hello, world!\n");
+			optionsLogger.info("Hello, world!\n");			
+			optionsLogger.error("Hello, world!\n");
+			optionsLogger.muted("Hello, world!\n");
+			optionsLogger.log("Hello, world!\n");
+
+			expect((fancyLog as unknown as jest.Mock).mock.calls).toMatchSnapshot();
+		});
+	});
 });
