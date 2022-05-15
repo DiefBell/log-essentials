@@ -20,6 +20,16 @@ export const getPrefixedLogger = (prefix  = "") => new Logger({ prefix });
  */
 export const getLogger = (options : Partial<ILoggerSettings> = {}) => new Logger(options);
 
+/**
+ * @description
+ * Creates an instance of Logger, with or without namespace and/or options
+ * depending on the argument passed
+ * 
+ * @param options
+ * If undefined, will return a basic logger.
+ * If a string, will return a namespaced logger.
+ * If options, will return a logger with options.
+ */
 export default (options ?: string | ILoggerSettings) => 
 {
 	if(options === undefined) return getLogger({});
