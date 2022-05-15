@@ -32,7 +32,7 @@ export const hasseparator = (options : ILogOptions) =>
 
 export const isIconsEnabled = (options : ILogOptions) => 
 {
-	return options.isIconsEnabled;
+	return options.icons;
 };
 
 export const getIconFromColor = (color ?: Color) => 

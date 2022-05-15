@@ -4,6 +4,6 @@ export interface ILoggerSettings
 {
 	prefix : string;
 	separator : string;
-	isIconsEnabled : boolean;
+	icons : boolean;
 	level : LogLevel
 }

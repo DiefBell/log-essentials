@@ -74,7 +74,7 @@ describe("Log Essentials package", () =>
 		{
 			const optionsLogger = getLogger({
 				prefix: "my-other-namespace",
-				isIconsEnabled: true,
+				icons: true,
 				separator: ":",
 			});
 			

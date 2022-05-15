@@ -6,14 +6,14 @@ import { performLog } from "./util/index";
 
 export class Logger 
 {
-	private options : ILoggerSettings;
+	private settings : ILoggerSettings;
 
 	constructor({
-		isIconsEnabled = false, level = "all", prefix = "", separator = "-"
+		icons: icons = false, level = "all", prefix = "", separator = "-"
 	} : Partial<ILoggerSettings>) 
 	{
-		this.options = {
-			isIconsEnabled,
+		this.settings = {
+			icons: icons,
 			level,
 			prefix,
 			separator
@@ -22,23 +22,23 @@ export class Logger
 
 	setLogLevel(newLevel : LogLevel) 
 	{
-		this.options.level = newLevel;
+		this.settings.level = newLevel;
 	}
 
-	setIconsEnabled(isIconsEnabled : boolean) 
+	setIconsEnabled(icons : boolean) 
 	{
-		this.options.isIconsEnabled = isIconsEnabled;
+		this.settings.icons = icons;
 	}
 
 	setseparator(separator : string) 
 	{
-		this.options.separator = separator;
+		this.settings.separator = separator;
 	}
 
 	log(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "info"],
 		};
 		performLog(logOptions, ...params);
@@ -47,7 +47,7 @@ export class Logger
 	success(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "info"],
 			color: "green",
 		};
@@ -58,7 +58,7 @@ export class Logger
 	info(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "info"],
 			color: "blue",
 		};
@@ -68,7 +68,7 @@ export class Logger
 	warn(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "warn"],
 			color: "yellow",
 		};
@@ -78,7 +78,7 @@ export class Logger
 	error(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "warn"],
 			color: "red",
 		};
@@ -88,7 +88,7 @@ export class Logger
 	muted(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.options,
+			...this.settings,
 			validLevel: ["all", "info"],
 			color: "gray",
 		};
