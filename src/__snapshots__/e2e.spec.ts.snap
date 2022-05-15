@@ -3,22 +3,22 @@
 exports[`Log Essentials package when doing standard logging should match the snapshot 1`] = `
 Array [
   Array [
-    "[32m√[39m",
+    "[32m✔[39m",
     "Hello, world!
 ",
   ],
   Array [
-    "[33m‼[39m",
+    "[33m⚠[39m",
     "Hello, world!
 ",
   ],
   Array [
-    "[34mi[39m",
+    "[34mℹ[39m",
     "Hello, world!
 ",
   ],
   Array [
-    "[31m×[39m",
+    "[31m✖[39m",
     "Hello, world!
 ",
   ],
@@ -38,28 +38,28 @@ Array [
   Array [
     "[my-other-namespace]",
     ":",
-    "[32m√[39m",
+    "[32m✔[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-other-namespace]",
     ":",
-    "[33m‼[39m",
+    "[33m⚠[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-other-namespace]",
     ":",
-    "[34mi[39m",
+    "[34mℹ[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-other-namespace]",
     ":",
-    "[31m×[39m",
+    "[31m✖[39m",
     "Hello, world!
 ",
   ],
@@ -83,28 +83,28 @@ Array [
   Array [
     "[my-namespace]",
     ":",
-    "[32m√[39m",
+    "[32m✔[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-namespace]",
     ":",
-    "[33m‼[39m",
+    "[33m⚠[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-namespace]",
     ":",
-    "[34mi[39m",
+    "[34mℹ[39m",
     "Hello, world!
 ",
   ],
   Array [
     "[my-namespace]",
     "=>",
-    "[31m×[39m",
+    "[31m✖[39m",
     "Hello, world!
 ",
   ],

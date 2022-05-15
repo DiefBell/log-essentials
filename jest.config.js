@@ -10,5 +10,8 @@ module.exports = {
           tsconfig: '<rootDir>/tsconfig.json',
       },
   },
-  transformIgnorePatterns: [ "<rootDir>/node_mdoules/*" ]
+  transformIgnorePatterns: [ "<rootDir>/node_mdoules/*" ],
+  collectCoverageFrom: [
+    "src/**/{!(e2e),}.spec.ts"
+  ]
 };
