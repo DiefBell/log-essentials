@@ -7,7 +7,7 @@ import { Logger } from "./Logger";
  *
  * @param prefix Defines the namespace of the logger
  */
-export const getPrefixedLogger = (prefix  = "") => new Logger({ prefix });
+export const getPrefixedLogger = (prefix : string) => new Logger({ prefix });
 
 /**
  * @description
