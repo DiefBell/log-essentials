@@ -11,6 +11,10 @@ describe("The package index", () =>
 	{
 		jest.resetAllMocks();
 	});
+	afterAll(() => 
+	{
+		jest.restoreAllMocks();
+	});
 
 	describe("exported getLogger function", () =>
 	{

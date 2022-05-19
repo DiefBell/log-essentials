@@ -52,13 +52,13 @@ describe("Log Essentials package", () =>
 			const namespacedLogger = getPrefixedLogger("my-namespace");
 			namespacedLogger.setIconsEnabled(true);
 
-			namespacedLogger.setseparator(":");
+			namespacedLogger.setSeparator(":");
 			
 			namespacedLogger.success("Hello, world!\n");
 			namespacedLogger.warn("Hello, world!\n");
 			namespacedLogger.info("Hello, world!\n");
 
-			namespacedLogger.setseparator("=>");
+			namespacedLogger.setSeparator("=>");
 			
 			namespacedLogger.error("Hello, world!\n");
 			namespacedLogger.muted("Hello, world!\n");

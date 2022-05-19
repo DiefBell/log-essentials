@@ -6,13 +6,17 @@ import { performLog } from "./util/index";
 
 export class Logger 
 {
-	private settings : ILoggerSettings;
+	private _settings : ILoggerSettings;
+	public get settings() 
+	{
+		return this._settings; 
+	}
 
 	constructor({
 		icons: icons = false, level = "all", prefix = "", separator = "-"
 	} : Partial<ILoggerSettings>) 
 	{
-		this.settings = {
+		this._settings = {
 			icons: icons,
 			level,
 			prefix,
@@ -22,23 +26,23 @@ export class Logger
 
 	setLogLevel(newLevel : LogLevel) 
 	{
-		this.settings.level = newLevel;
+		this._settings.level = newLevel;
 	}
 
 	setIconsEnabled(icons : boolean) 
 	{
-		this.settings.icons = icons;
+		this._settings.icons = icons;
 	}
 
-	setseparator(separator : string) 
+	setSeparator(separator : string) 
 	{
-		this.settings.separator = separator;
+		this._settings.separator = separator;
 	}
 
 	log(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "info"],
 		};
 		performLog(logOptions, ...params);
@@ -47,7 +51,7 @@ export class Logger
 	success(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "info"],
 			color: "green",
 		};
@@ -58,7 +62,7 @@ export class Logger
 	info(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "info"],
 			color: "blue",
 		};
@@ -68,7 +72,7 @@ export class Logger
 	warn(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "warn"],
 			color: "yellow",
 		};
@@ -78,7 +82,7 @@ export class Logger
 	error(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "warn"],
 			color: "red",
 		};
@@ -88,7 +92,7 @@ export class Logger
 	muted(...params : LogParams) 
 	{
 		const logOptions : ILogOptions = {
-			...this.settings,
+			...this._settings,
 			validLevel: ["all", "info"],
 			color: "gray",
 		};
