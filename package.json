@@ -10,6 +10,7 @@
     "lint:fix": "eslint ./src/**/*.ts --fix",
     "no-circ-deps": "dpdm --no-warning --no-tree --exit-code circular:1 ./src/index.ts",
     "test": "jest --coverage",
+    "test:e2e": "jest --config jest-e2e.config.js",
     "example:es6": "yarn build && node example-es6/index.js",
     "example:es5": "yarn build && node example-es5/index.js"
   },

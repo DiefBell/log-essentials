@@ -10,10 +10,6 @@ module.exports = {
           tsconfig: '<rootDir>/tsconfig.json',
       },
   },
+  testMatch: [ "<rootDir>/src/e2e.spec.ts" ],
   transformIgnorePatterns: [ "<rootDir>/node_mdoules/*" ],
-  testPathIgnorePatterns: [ "src/e2e.spec.ts" ],
-  collectCoverageFrom: [
-    "src/**/*ts",
-    "!(src/*.spec.ts)"
-  ]
 };

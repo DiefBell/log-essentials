@@ -1,6 +1,7 @@
 {
     "ignorePatterns": [
         "jest.config.js",
+        "jest-e2e.config.js",
         "example-es6/*",
         "example-es5/*",
         "lib/*"
