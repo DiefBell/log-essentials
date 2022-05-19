@@ -14,6 +14,9 @@ module.exports = {
   testPathIgnorePatterns: [ "src/e2e.spec.ts" ],
   collectCoverageFrom: [
     "src/**/*ts",
-    "!(src/*.spec.ts)"
-  ]
+    "!(src/*.spec.ts)",
+    "!(src/*.d.ts"
+  ],
+  coverageDirectory: "<rootDir>/coverage",
+  coverageReporters: [ "html", "text", "text-summary" ]
 };
