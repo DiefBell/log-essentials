@@ -15,7 +15,7 @@ module.exports = {
   collectCoverageFrom: [
     "src/**/*ts",
     "!(src/*.spec.ts)",
-    "!(src/*.d.ts"
+    "!(src/*.d.ts)"
   ],
   coverageDirectory: "<rootDir>/coverage",
   coverageReporters: [ "html", "text", "text-summary" ],
