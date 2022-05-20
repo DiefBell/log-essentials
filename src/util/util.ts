@@ -24,7 +24,7 @@ export const hasPrefix = (options : ILogOptions) =>
 	return options.prefix.length;
 };
 
-export const hasseparator = (options : ILogOptions) => 
+export const hasSeparator = (options : ILogOptions) => 
 {
 	return options.separator.length;
 };
@@ -40,16 +40,12 @@ export const getIconFromColor = (color ?: ColorName) =>
 	{
 		case "blue":
 			return logSymbols.info;
-			break;
 		case "red":
 			return logSymbols.error;
-			break;
 		case "yellow":
 			return logSymbols.warning;
-			break;
 		case "green":
 			return logSymbols.success;
-			break;
 		default:
 			return null;
 	}

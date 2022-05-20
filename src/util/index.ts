@@ -1,4 +1,4 @@
-import { colorizeParams, getIconFromColor, hasPrefix, hasseparator, isIconsEnabled, shouldLog } from "./util";
+import { colorizeParams, getIconFromColor, hasPrefix, hasSeparator, isIconsEnabled, shouldLog } from "./util";
 
 import { ILogOptions } from "../ILogOptions";
 import { LogParams } from "../LogParams";
@@ -15,7 +15,7 @@ export const performLog = (options : ILogOptions, ...params : LogParams) =>
 	{
 		logOutput.push(`[${options.prefix}]`);
 
-		if (hasseparator(options)) 
+		if (hasSeparator(options)) 
 		{
 			logOutput.push(options.separator);
 		}

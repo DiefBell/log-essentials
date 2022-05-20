@@ -1,6 +1,6 @@
 import * as performLog from "./util/index";
 
-import { ColorNames } from "./Color";
+import { ColorName } from "./Color";
 import { ILoggerSettings } from "./ILoggerSettings";
 import { LogLevel } from "./LogLevel";
 import { Logger } from "./Logger";
@@ -134,7 +134,7 @@ describe("The Logger Class", () =>
 
 		it("should call the performLog function with the correct color", () =>
 		{
-			const correctColor : ColorNames = "green";
+			const correctColor : ColorName = "green";
 
 			const logger = new Logger(settings);
 			logger.success();
@@ -179,7 +179,7 @@ describe("The Logger Class", () =>
 
 		it("should call the performLog function with the correct color", () =>
 		{
-			const correctColor : ColorNames = "blue";
+			const correctColor : ColorName = "blue";
 
 			const logger = new Logger(settings);
 			logger.info();
@@ -224,7 +224,7 @@ describe("The Logger Class", () =>
 
 		it("should call the performLog function with the correct color", () =>
 		{
-			const correctColor : ColorNames = "yellow";
+			const correctColor : ColorName = "yellow";
 
 			const logger = new Logger(settings);
 			logger.warn();
@@ -269,7 +269,7 @@ describe("The Logger Class", () =>
 
 		it("should call the performLog function with the correct color", () =>
 		{
-			const correctColor : ColorNames = "red";
+			const correctColor : ColorName = "red";
 
 			const logger = new Logger(settings);
 			logger.error();
@@ -314,7 +314,7 @@ describe("The Logger Class", () =>
 
 		it("should call the performLog function with the correct color", () =>
 		{
-			const correctColor : ColorNames = "gray";
+			const correctColor : ColorName = "gray";
 
 			const logger = new Logger(settings);
 			logger.muted();
