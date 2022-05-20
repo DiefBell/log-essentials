@@ -18,7 +18,7 @@ logger.setLogLevel('none');
 logger.setLogLevel('all');
 
 logger.setIconsEnabled(true);
-logger.setseparator(':');
+logger.setSeparator(':');
 
 logger.success('Hello, world!');
 logger.warn('Hello, world!');

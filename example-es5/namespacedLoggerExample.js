@@ -4,6 +4,6 @@ export default () =>
 {
 	const namespacedLogger = getPrefixedLogger("my-namespace");
 
-	namespacedLogger.setseparator(":");
+	namespacedLogger.setSeparator(":");
 	namespacedLogger.warn("Hello, world!\n");
 }
