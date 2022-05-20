@@ -1,7 +1,6 @@
 import { getLogger } from "../lib/index.js";
 import namespacedLoggerExample from "./namespacedLoggerExample.js";
 import optionsLoggerExample from "./optionsLoggerExample.js";
-import requireLoggerExample from "./requireLoggerExample.js.js";
 
 const logger = getLogger();
 
