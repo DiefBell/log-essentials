@@ -1,12 +1,11 @@
-import * as colors from "colors/safe";
-
-import type { Color } from "../Color";
+import type { ColorName } from "../Color";
 import type { ILogOptions } from "../ILogOptions";
 import type { LogLevel } from "../LogLevel";
 import type { LogParams } from "../LogParams";
+import colors from "colors/safe";
 import logSymbols from "log-symbols";
 
-export const colorizeParams = (color ?: Color, ...params : LogParams) => 
+export const colorizeParams = (color ?: ColorName, ...params : LogParams) => 
 {
 	if (!color || !colors[color]) return params;
 
@@ -35,7 +34,7 @@ export const isIconsEnabled = (options : ILogOptions) =>
 	return options.icons;
 };
 
-export const getIconFromColor = (color ?: Color) => 
+export const getIconFromColor = (color ?: ColorName) => 
 {
 	switch (color) 
 	{
