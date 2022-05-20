@@ -2,6 +2,7 @@ import * as utils from "./util";
 
 import { Color, ColorName } from "../Color";
 
+import { ILogOptions } from "../ILogOptions";
 import { LogParams } from "../LogParams";
 import logSymbols from "log-symbols";
 
@@ -52,25 +53,81 @@ describe("Util functions", () =>
 		});
 	});
 
-	// describe("shouldLog", () =>
-	// {
+	describe("shouldLog", () =>
+	{
+		it("should return false if the Logger's log level does not match this log's levels", () => 
+		{
+			expect(utils.shouldLog("info", [ "all", "warn" ])).toBe(false);
+		});
 
-	// });
+		it("should return true if the Logger's log level does match this log's levels", () => 
+		{
+			expect(utils.shouldLog("warn", [ "all", "warn" ])).toBe(true);
+		});
+	});
 
-	// describe("hasPrefix", () =>
-	// {
+	describe("hasPrefix", () =>
+	{
+		const options : ILogOptions = {
+			prefix: "abc",
+			level: "warn",
+			separator: "<->",
+			icons: true,
+			validLevel: [ "all", "warn" ]
+		};
 
-	// });
+		it("should return false if the Logger has no prefix", () => 
+		{
+			expect(utils.hasPrefix({ ...options, prefix: "" })).toBeFalsy();
+		});
 
-	// describe("hasSeparator", () =>
-	// {
+		it("should return true if the Logger has a prefix", () => 
+		{
+			expect(utils.hasPrefix({ ...options })).toBeTruthy();
+		});
+	});
 
-	// });
+	describe("hasSeparator", () =>
+	{
+		const options : ILogOptions = {
+			prefix: "abc",
+			level: "warn",
+			separator: "<->",
+			icons: true,
+			validLevel: [ "all", "warn" ]
+		};
 
-	// describe("isIconsEnabled", () =>
-	// {
+		it("should return false if the Logger has no separator", () => 
+		{
+			expect(utils.hasSeparator({ ...options, separator: "" })).toBeFalsy();
+		});
 
-	// });
+		it("should return true if the Logger has a separator", () => 
+		{
+			expect(utils.hasSeparator({ ...options })).toBeTruthy();
+		});
+	});
+
+	describe("isIconsEnabled", () =>
+	{
+		const options : ILogOptions = {
+			prefix: "abc",
+			level: "warn",
+			separator: "<->",
+			icons: true,
+			validLevel: [ "all", "warn" ]
+		};
+
+		it("should return true if icons are enabled", () => 
+		{
+			expect(utils.isIconsEnabled(options)).toBe(true);
+		});
+
+		it("should return false if icons are not enabled", () => 
+		{
+			expect(utils.isIconsEnabled({ ...options, icons: false })).toBe(false);
+		});
+	});
 
 	describe("getIconFromColor", () =>
 	{
