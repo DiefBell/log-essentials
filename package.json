@@ -12,7 +12,8 @@
     "test": "jest --coverage",
     "test:e2e": "jest --config jest-e2e.config.js",
     "example:es6": "yarn build && node example-es6/index.js",
-    "example:es5": "yarn build && node example-es5/index.js"
+    "example:es5": "yarn build && node example-es5/index.js",
+    "prepare": "husky install"
   },
   "files": [
     "lib/**/*",
@@ -49,6 +50,7 @@
     "dpdm": "^3.9.0",
     "eslint": "^8.15.0",
     "eslint-plugin-jest": "^26.1.5",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4"
